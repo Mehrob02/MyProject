@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+               body{
+            background-color: rgb(0, 0, 63); 
+        }
+        span{
+            color: white;
+            font-size: 50px;
+            display: none;
+        }
+        .animcard {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 0, 0);
+	--angle: 0deg;
+	width: 200px;
+	height: 200px;
+	border: 10px solid;
+	border-image: linear-gradient(var(--angle), darkblue, aqua, blue) 1;
+	animation: 10s rotate linear infinite;
+}
+.animcard:hover span{
+   display: inline;
+}
+.animcard:hover{
+    background-color: blue;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+ </style>
+</head>
+<body>
+    <div class="animcard">
+        <span>Magic</span>
+    </div>
+    <p style="font-size: 50px;">Hover me!</p>
+</body>
+</html>
